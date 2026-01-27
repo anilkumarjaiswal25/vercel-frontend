@@ -1,0 +1,30 @@
+.model-overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height:100%;
+  width:100%;
+  background-color:rgba(0, 0, 0,0.5);
+  display: none;
+} 
+.mActive{
+  display: flex;
+}
+.modalDiv{
+  /* text-align: center; */
+  border-radius: 5px;
+  height:380px;
+  position:fixed;
+  width:380px;
+  background-color:white;
+  left: 50%;
+  top:-300px;
+  transition:4s ease-in-out;
+  transform: translate(-50%,-50%);
+  box-shadow: 0px 0px 2px 3px rgba(red, green, blue, rgba(0, 0, 0,0.5));
+}
+
+.active{
+  top: 50%;
+  /* display: block; */
+}
