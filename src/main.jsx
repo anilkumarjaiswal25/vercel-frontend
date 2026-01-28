@@ -15,10 +15,11 @@ import PublicRoute from './component/Authentication/PublicRoute.jsx';
 import PrivateRoute from './component/Authentication/PrivateRoute.jsx';
 import AdminRoute from './component/Authentication/Admin-Route.jsx';
 import AdminLayout from './component/Admin/Layout/Admin-Layout.jsx';
-import Dashboard from './component/Admin/Dashboard/DashBoard.jsx';
+// import Dashboard from './component/Admin/Dashboard/Dashboard.jsx';
 import MessageList from './component/Admin/Message/Message-List.jsx';
 import UserList from './component/Admin/User/User-List.jsx';
 import MessageView from './component/Admin/Message/Message-View.jsx';
+import Dashboard from './component/Admin/Dashboard/Dashboard.jsx';
 
 
 const allRoutes = createBrowserRouter([
