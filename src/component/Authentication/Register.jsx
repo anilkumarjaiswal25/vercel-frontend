@@ -22,7 +22,8 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:8000/api/register', {
+      const response = await fetch(`https://anil-jaiswal.onrender.com/api/register`, {
+      // const response = await fetch('http://localhost:8000/api/register', {
         method: "POST",
         headers: {
           "Accept": "application/json",      // Laravel ko batane ke liye ki JSON chahiye

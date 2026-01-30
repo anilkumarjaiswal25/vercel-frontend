@@ -21,7 +21,8 @@ const MessageView = () => {
 
     try {
       const response = await fetch(
-        `http://127.0.0.1:8000/api/admin/messages/${id}`,
+        `https://anil-jaiswal.onrender.com/api/admin/messages/${id}`,
+        // `http://127.0.0.1:8000/api/admin/messages/${id}`,
         {
           method: "GET",
           headers: {

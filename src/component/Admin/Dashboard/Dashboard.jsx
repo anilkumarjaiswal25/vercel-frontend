@@ -16,7 +16,8 @@ const Dashboard = () => {
 
     try {
       const res = await fetch(
-        "http://127.0.0.1:8000/api/admin/dashboard-stats",
+        // "http://127.0.0.1:8000/api/admin/dashboard-stats",
+        `https://anil-jaiswal.onrender.com/api/admin/dashboard-stats`,
         {
           headers: {
             Accept: "application/json",

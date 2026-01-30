@@ -31,7 +31,8 @@ export const Auth = ({ children }) => {
         try {
             setIsLoading(true);
             // ✅ Laravel ka sahi API URL yahan dalein
-            const response = await fetch("http://localhost:8000/api/user", { 
+            const response = await fetch(`https://anil-jaiswal.onrender.com/api/user`, { 
+            // const response = await fetch("http://localhost:8000/api/user", { 
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
