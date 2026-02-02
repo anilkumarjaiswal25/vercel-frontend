@@ -11,7 +11,9 @@ pdfjs.GlobalWorkerOptions.workerSrc = new URL(
 
 const Cv = () => {
   const [width, setWidth] = useState(window.innerWidth);
-  const pdfPath = "../assets/My-resume/ANIL JAISWAL- RESUME.pdf";
+  // const pdfPath = "../assets/My-resume/ANIL JAISWAL- RESUME.pdf";
+  // Naya path (Public folder ke liye):
+  const pdfPath = "/My-resume/ANIL JAISWAL- RESUME.pdf";
 
   useEffect(() => {
     const handleResize = () => setWidth(window.innerWidth);
@@ -56,8 +58,8 @@ const Cv = () => {
         <a
           href={pdfPath}
           download="Anil_Jaiswal_Resume.pdf"
-          target="_blank"           
-          rel="noopener noreferrer"    
+          target="_blank"
+          rel="noopener noreferrer"
           className='flex items-center gap-3 px-8 py-3 bg-purple-600 text-white rounded-md font-bold text-[15px] shadow-lg hover:bg-purple-700 transition-all duration-300 hover:scale-105 active:scale-95 border-b-4 border-purple-900'
         >
           <AiOutlineCloudDownload className="text-2xl" />
