@@ -8,7 +8,8 @@ const Contact = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("")
   const [subject, setSubject] = useState("")
-  const api = "http://127.0.0.1:8000/api/contact"
+  // const api = "http://127.0.0.1:8000/api/contact"
+  const api = `https://anil-jaiswal.onrender.com/api/contact`
   const ContactFrom = async (e) => {
     e.preventDefault();
     const token = localStorage.getItem("token")
