@@ -21,14 +21,16 @@ import {
 import { CgFileDocument } from "react-icons/cg";
 import { FaSignOutAlt } from "react-icons/fa";
 
-import { Navigate, NavLink } from "react-router-dom";
+import { Navigate, NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from "./Authentication/Auth";
 const Navbar = () => {
-
+  const navigate = useNavigate();
   const { user, isLoggedIn, isLoading, LogoutUser } = useAuth();
-  // if(user.role==='admin'){
-  //   Navigate('/admin')
-  // }
+  useEffect(() => {
+    if (user?.role === 'admin') {
+      navigate('/admin');
+    }
+  }, [user, navigate]);
 
   const [scrolled, setScrolled] = useState(false)
   const [isOpen, setIsOpen] = useState(false);
@@ -60,7 +62,7 @@ const Navbar = () => {
   return (
     <>
       {/* Navbar */}
-      <nav className={`text-[#ecf0f1] sticky top-0 left-0 right-0 bg-[#181a27] lg:bg-[rgba(0,0,0,0.5)] backdrop-blur-md  ${scrolled ? "lg:z-[9999] lg:bg-[rgba(0,0,0,0.5)] lg:backdrop-blur-md" : "lg:bg-transparent"}`}>
+      <nav className={`text-[#ecf0f1] sticky top-0 left-0 right-0 bg-[#181a27] lg:bg-[rgba(0,0,0,0.5)] backdrop-blur-md  ${scrolled ? "z-[10000] lg:bg-[rgba(0,0,0,0.5)] lg:backdrop-blur-md" : "lg:bg-transparent"}`}>
         <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between lg:justify-around h-[120px]">
             <h1 className="purple text-2xl font-[550]">{isLoggedIn && user ? `Welcome, ${user.name}` : "Portfolio"}</h1>
@@ -136,7 +138,7 @@ const Navbar = () => {
         {/* Mobile Menu - Overlay below Nav */}
         <div
           className={`lg:hidden bg-[#181a27] absolute left-0 right-0 top-full transition-all duration-500 ease-in-out
-            ${isOpen ? "max-h-[450px] opacity-100 z-[9999] " : "max-h-0 "} 
+            ${isOpen ? "max-h-[450px] opacity-100 z-[10001] " : "max-h-0 "} 
             overflow-hidden z-50`}
         >
           <div className="flex flex-col gap-6 py-6 items-center text-center">
@@ -144,7 +146,7 @@ const Navbar = () => {
               <NavLink
                 key={link.name}
                 to={link.path}
-                onClick={()=>setIsOpen(false)}
+                onClick={() => setIsOpen(false)}
                 className="cursor-pointer hover:text-blue-600  flex items-center"
               >
                 {link.icon}
@@ -157,6 +159,7 @@ const Navbar = () => {
                 {user?.role === "admin" && (
                   <NavLink
                     to="/admin"
+                    onClick={() => setIsOpen(false)}
                     className="cursor-pointer hover:text-blue-600 flex items-center"
                   >
                     <AiOutlineBars className="text-[20px] me-[6px]" />
@@ -166,6 +169,7 @@ const Navbar = () => {
 
                 <NavLink
                   to="/resume"
+                  onClick={() => setIsOpen(false)}
                   className="cursor-pointer hover:text-blue-600 flex items-center"
                 >
                   <CgFileDocument className="text-[20px] me-[6px]" />
@@ -174,6 +178,7 @@ const Navbar = () => {
 
                 <NavLink
                   to="/logout"
+                  onClick={() => setIsOpen(false)}
                   className="cursor-pointer hover:text-blue-600 flex items-center"
                 >
                   <AiOutlineLogout className="text-[20px] me-[6px]" />
@@ -182,12 +187,18 @@ const Navbar = () => {
               </>
             ) : (
               <>
-                <NavLink to="/register" className="cursor-pointer hover:text-blue-600 flex items-center">
+                <NavLink
+                  to="/register"
+                  onClick={() => setIsOpen(false)}
+                  className="cursor-pointer hover:text-blue-600 flex items-center">
                   <AiOutlineUserAdd className="text-[20px] me-[6px]" />
                   Register
                 </NavLink>
 
-                <NavLink to="/login" className="cursor-pointer hover:text-blue-600 flex items-center">
+                <NavLink
+                  to="/login"
+                  onClick={() => setIsOpen(false)}
+                  className="cursor-pointer hover:text-blue-600 flex items-center">
                   <AiOutlineLogin className="text-[20px] me-[6px]" />
                   Login
                 </NavLink>

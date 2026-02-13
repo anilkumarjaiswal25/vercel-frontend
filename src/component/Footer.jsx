@@ -19,9 +19,11 @@ const Footer = () => {
 
         <ul className="flex justify-center gap-5 mt-4">
           <li>
-            <a href="#" target="_blank"
-              className="text-white hover:text-[#87209e] transition-all duration-300 hover:-translate-y-[2px]">
-              <AiOutlineGithub size={22} />
+            <a
+            href="https://github.com/anilkumarjaiswal25" 
+            target="_blank"
+             className="text-white hover:text-[#87209e] transition-all duration-300 hover:-translate-y-[2px]">
+             <AiOutlineGithub size={22} />
             </a>
           </li>
 
@@ -33,9 +35,11 @@ const Footer = () => {
           </li>
 
           <li>
-            <a href="#" target="_blank"
-              className="text-white hover:text-[#87209e] transition-all duration-300 hover:-translate-y-[2px]">
-              <MdOutlineWhatsapp size={22} />
+            <a
+            href="https://wa.me/919695604044" 
+            target="_blank"
+            className="text-white hover:text-[#87209e] transition-all duration-300 hover:-translate-y-[2px]">
+            <MdOutlineWhatsapp size={22} />
             </a>
           </li>
 
